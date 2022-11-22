@@ -1,0 +1,6 @@
+requests
+pandas
+numpy
+streamlit==1.11.1
+paddlepaddle
+opencv-python
