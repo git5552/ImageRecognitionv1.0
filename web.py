@@ -1,17 +1,15 @@
-import numpy as np
-import streamlit as st
-import cv2
+
 from ocr import OCRDetector
 from baike_crawler import parse_baike
 import re
 
 import numpy as np
-import pandas as pd
+
 import streamlit as st
 
 import cv2
 import time
-import matplotlib.pyplot as plt
+
 
 ocr = OCRDetector()
 st.title('配料表识别v1.0')
