@@ -1,19 +1,12 @@
 requests
 pandas
 numpy
-<<<<<<< HEAD
-streamlit==1.11.1
 beautifulsoup4
-opencv-python
-opencv-contrib-python
 paddlepaddle
 paddleocr
 opencv-python-headless
-=======
 streamlit
-beautifulsoup4
 opencv-contrib-python
 opencv-python
-paddlepaddle
-paddleocr
->>>>>>> 8b0d0e4 (4/30)
+
+
