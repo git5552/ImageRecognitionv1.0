@@ -17,13 +17,9 @@ import streamlit as st
 
 import cv2
 import time
-
+from streamlit_cropper import st_cropper
 
 ocr = OCRDetector()
-
-
-
-
 
 class MyRandom:
     def __init__(self,num):
@@ -33,7 +29,10 @@ def my_hash_func(my_random):
     num = my_random.random_num
     return num
 
-
+def crop_image(image):
+    rect = cv2.selectROI("选择截图区域", image, False)
+    cropped_img = image[int(rect[1]):int(rect[1] + rect[3]), int(rect[0]):int(rect[0] + rect[2])]
+    return cropped_img
 
 st.title('配料表识别v3.0')
 uploaded_file = st.file_uploader("上传配料表", ['png', 'jpg', 'jpeg'])
@@ -41,7 +40,7 @@ uploaded_file = st.file_uploader("上传配料表", ['png', 'jpg', 'jpeg'])
 
 if uploaded_file is not None:
     bytes_data = uploaded_file.getvalue()
-     # get image
+    # get image
     image = cv2.imdecode(np.frombuffer(bytes_data, np.uint8), cv2.IMREAD_COLOR)
     image = cv2.resize(image, (500, 500))
     st.title("原始图片")
@@ -49,11 +48,9 @@ if uploaded_file is not None:
 
     col1, col2 = st.columns(2)
     with col1:
-
         if st.button("图片裁剪"):
             cv2.destroyAllWindows()
-            rect = cv2.selectROI("选择截图区域", image, False)
-            cropped_img = image[int(rect[1]):int(rect[1] + rect[3]), int(rect[0]):int(rect[0] + rect[2])]
+            cropped_img = crop_image(image)
             st.image(cropped_img, channels="BGR")
             st.info('正在进行OCR识别')
             try:
