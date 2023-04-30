@@ -1,12 +1,7 @@
 from paddleocr import PaddleOCR
 
 
-<<<<<<< HEAD
 
-
-
-=======
->>>>>>> 8b0d0e4 (4/30)
 #创建OCRDetector类，将OCR检测和识别的功能封装
 class OCRDetector:
     def __init__(self):
@@ -55,7 +50,4 @@ class OCRDetector:
 
         print(res)
         return res
-<<<<<<< HEAD
-=======
 
->>>>>>> 8b0d0e4 (4/30)
