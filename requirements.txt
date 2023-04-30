@@ -8,5 +8,5 @@ paddleocr
 opencv-python-headless
 opencv-contrib-python
 opencv-python
-protobuf==3.20.0
-pip==23.0.1
+protobuf==3.19.0
+pip==23.1.2
