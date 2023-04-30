@@ -8,5 +8,5 @@ opencv-python-headless
 streamlit
 opencv-contrib-python
 opencv-python
-
+protobuf==3.2.0
 
