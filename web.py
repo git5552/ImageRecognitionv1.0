@@ -151,7 +151,7 @@ if uploaded_file:
                         desc = desc.replace('剂', '<font color="#FF0000">剂</font>')
                         st.caption(desc, unsafe_allow_html=True)
                     with st.spinner(f'配料爬取中，已完成 {i + 1}/{len(items)}'):
-                        time.sleep(5)
+                        time.sleep(2)
 
     with col2:
         # file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
@@ -193,7 +193,7 @@ if uploaded_file:
                         desc = desc.replace('剂', '<font color="#FF0000">剂</font>')
                         st.caption(desc, unsafe_allow_html=True)
                     with st.spinner(f'配料爬取中，已完成 {i + 1}/{len(items)}'):
-                        time.sleep(5)
+                        time.sleep(2)
 
 
 
