@@ -1,7 +1,5 @@
-
-
-目录结构
-fonts 字体文件
-baike_crawler.py 百度百科爬虫代码
-ocr.py ocr技术识别配料表，并解析配料
-web.py streamlit开发UI，可以上传图片，显示识别结果
+# 目录结构
+# fonts 字体文件
+# baike_crawler.py 百度百科爬虫代码
+# ocr.py ocr技术识别配料表，并解析配料
+# web.py streamlit开发UI，可以上传图片，显示识别结果

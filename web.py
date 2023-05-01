@@ -1,13 +1,8 @@
-
-
 from ocr import OCRDetector
 from baike_crawler import parse_baike
 import re
-
 import numpy as np
-
 import streamlit as st
-
 from io import BytesIO
 from ocr import OCRDetector
 from baike_crawler import parse_baike
@@ -29,18 +24,18 @@ def my_hash_func(my_random):
     num = my_random.random_num
     return num
 
-<<<<<<< HEAD
+
 def crop_image(image):
     rect = cv2.selectROI("选择截图区域", image, False)
     cropped_img = image[int(rect[1]):int(rect[1] + rect[3]), int(rect[0]):int(rect[0] + rect[2])]
     return cropped_img
-=======
+
 # def crop_image(image):
 #     rect = cv2.selectROI("选择截图区域", image, False)
 #     cropped_img = image[int(rect[1]):int(rect[1] + rect[3]), int(rect[0]):int(rect[0] + rect[2])]
 #     return cropped_img
 
->>>>>>> 0fbf26d (latest)
+
 
 
 
@@ -111,29 +106,6 @@ if uploaded_file:
 
         st.image(masked_image)
 
-<<<<<<< HEAD
-if uploaded_file is not None:
-    bytes_data = uploaded_file.getvalue()
-    # get image
-    image = cv2.imdecode(np.frombuffer(bytes_data, np.uint8), cv2.IMREAD_COLOR)
-    image = cv2.resize(image, (500, 500))
-    st.title("原始图片")
-    st.image(image, channels="BGR")
-
-    col1, col2 = st.columns(2)
-    with col1:
-        if st.button("图片裁剪"):
-            cv2.destroyAllWindows()
-            cropped_img = crop_image(image)
-            st.image(cropped_img, channels="BGR")
-            st.info('正在进行OCR识别')
-            try:
-                # ocr识别配料表中
-                ocr_pred = ocr.predict(cropped_img)
-            except Exception as e:
-                st.error(f"发生错误: {e}")
-=======
-
     col1, col2 = st.columns(2)
     with col1:
         if st.button("裁剪后识别"):
@@ -150,7 +122,7 @@ if uploaded_file is not None:
             # 返回结果为空，则未识别
             if not ocr_pred:
                 st.warning('未识别出配料表，请重新上传')
->>>>>>> 0fbf26d (latest)
+
             else:
                 # 抓取配料信息
                 items = re.split('，|、|,|、', ocr_pred)
